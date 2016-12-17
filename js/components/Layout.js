@@ -2,20 +2,22 @@ import React from "react";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import Content from "./Content";
 
 export default class Layout extends React.Component {
   constructor() {
     super();
-    this.state = {name: "Impetus"};
+    this.state = {food: "potato"};
   }
+
   render() {
-    setTimeout(() => {
-      this.setState({name: "Henry"});
-    }, 1000)
+    const myProp = "This is a prop";
+
     return (
       <div>
-        {this.state.name}
         <Header />
+        {this.state.food}
+        <Content myProp={myProp} />
         <Footer />
       </div>
     );
