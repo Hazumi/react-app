@@ -7,17 +7,20 @@ import Content from "./Content";
 export default class Layout extends React.Component {
   constructor() {
     super();
-    this.state = {food: "potato"};
+    this.state = {
+      title: "Welcome!"
+    };
+  }
+
+  changeTitle(title) {
+    this.setState({title});
   }
 
   render() {
-    const myProp = "This is a prop";
-
     return (
       <div>
-        <Header />
-        {this.state.food}
-        <Content myProp={myProp} />
+        <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
+        <Content />
         <Footer />
       </div>
     );

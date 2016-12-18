@@ -4,7 +4,6 @@ export default class Content extends React.Component {
   render() {
     return (
       <div>
-        {this.props.myProp}
       </div>
     );
   }
